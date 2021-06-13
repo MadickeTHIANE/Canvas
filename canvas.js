@@ -33,26 +33,6 @@ function distance(x1,x2,y1,y2){
 
 
 
-function collision(circle,circle2){
-    let distance_x = circle2.x - circle.x;
-    let distance_y = circle2.y - circle.y;
-
-    /*Fonction afin de check la collision et de crée la collision*/
-    let angle = Math.atan2(distance_x,distance_y);
-    let sin = Math.sin(angle);
-    let cos = Math.cos(angle);
-    /*Circle 1 perpendiclar velocity*/
-    let vx1 = (circle.dx * cos + circle.dy * sin);
-    let vy1 =  (circle.dy * cos - circle.dx * sin);
-
-    /* Circle 2 perpendicular Velocity*/
-    let vx2 = (circle2.dx * cos + circle2.dy * sin);
-    let vy2 = (circle2.dy * cos - circle2.dx * sin);
-    circle.dx = vx2 * cos - vy1 * sin;
-	circle.dy = vy1 * cos + vx2 * sin;
-	circle2.dx = vx1 * cos - vy2 * sin;
-	circle2.dy = vy2 * cos + vx1 * sin;
-}
 /*Tout d'abord nous recuperons la distance entre les cercles */
 
 
